@@ -9,6 +9,9 @@
 /*   Updated: <date> by <username>                    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+
+
 #include <unistd.h>
 
 void ft_putchar(char c)
@@ -18,32 +21,32 @@ void ft_putchar(char c)
 
 void ft_print_comb(void)
 {
-    char i;
-    char j;
-    char k;
+    int num1;
+    int num2;
+    int num3;
 
-    i = '0';
-    while(i <= '7')
+    num1 = '0';
+    while (num1 <= '7')
     {
-        j = i + 1;
-        while(j <= '8')
+        num2 = num1 + 1;
+        while (num2 <= '8')
         {
-            k = j + 1;
-            while(k <= '9')
+            num3 = num2 + 1;
+            while (num3 <= '9')
             {
-                ft_putchar(i);
-                ft_putchar(j);
-                ft_putchar(k);
-                if (i != '7' || j != '8' || k != '9') // Para evitar la coma y espacio después de "789"
+                ft_putchar(num1);
+                ft_putchar(num2);
+                ft_putchar(num3);
+                if (num1 != '7' || num2 != '8' || num3 != '9') // Evitar la última coma y espacio
                 {
                     ft_putchar(',');
                     ft_putchar(' ');
                 }
-                k++;
+                num3++;
             }
-            j++;
+            num2++;
         }
-        i++;
+        num1++;
     }
 }
 
@@ -52,5 +55,3 @@ int main(void)
     ft_print_comb();
     return 0;
 }
-
-
